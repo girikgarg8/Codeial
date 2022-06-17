@@ -11,8 +11,8 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
-const customMWare = require('./config/middleware');
-const bodyParser = require('body-parser');
+const customMware = require('./config/middleware');
+
 
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -22,9 +22,11 @@ app.use(sassMiddleware({
     prefix: '/css'
 }));
 app.use(express.urlencoded());
+
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
+
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
@@ -51,10 +53,10 @@ app.use(session({
         {
             mongooseConnection: db,
             autoRemove: 'disabled'
-
+        
         },
-        function (err) {
-            console.log(err || 'connect-mongodb setup ok');
+        function(err){
+            console.log(err ||  'connect-mongodb setup ok');
         }
     )
 }));
@@ -63,16 +65,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
-//As flash uses the session cookie, the code for use of flash has to be written after app.use(passport)
+
 app.use(flash());
-app.use(customMWare.setFlash); //this is done to render the 
+app.use(customMware.setFlash);
 
 // use express router
 app.use('/', require('./routes'));
 
 
-app.listen(port, function (err) {
-    if (err) {
+app.listen(port, function(err){
+    if (err){
         console.log(`Error in running the server: ${err}`);
     }
 

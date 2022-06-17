@@ -13,7 +13,6 @@
   "author": "CodingNinjas",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.4",
@@ -25,6 +24,5 @@
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
-  },
-  "devDependencies": {}
+  }
 }
