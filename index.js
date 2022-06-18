@@ -29,6 +29,8 @@ app.use(express.static('./assets'));
 
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
+//make the uploads path available to user
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
@@ -53,10 +55,10 @@ app.use(session({
         {
             mongooseConnection: db,
             autoRemove: 'disabled'
-        
+
         },
-        function(err){
-            console.log(err ||  'connect-mongodb setup ok');
+        function (err) {
+            console.log(err || 'connect-mongodb setup ok');
         }
     )
 }));
@@ -73,8 +75,8 @@ app.use(customMware.setFlash);
 app.use('/', require('./routes'));
 
 
-app.listen(port, function(err){
-    if (err){
+app.listen(port, function (err) {
+    if (err) {
         console.log(`Error in running the server: ${err}`);
     }
 
