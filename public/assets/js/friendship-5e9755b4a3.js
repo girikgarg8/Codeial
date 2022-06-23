@@ -1,0 +1,1 @@
+const mongoose=require("mongoose"),friendshipSchema=new mongoose.Schema({from_user:{type:mongoose.Schema.Types.ObjectId,ref:"User"},to_user:{type:mongoose.Schema.Types.ObjectId,ref:"User"}},{timestamps:!0}),Friendship=mongoose.model("Friendship",friendshipSchema);module.exports=Friendship;
