@@ -1,3 +1,4 @@
+const cors = require("cors");
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -11,27 +12,27 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
-
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+app.use(cors({ credentials: true, origin: 'http://localhost:8000',methods:["GET" , "POST" , "PUT", "DELETE"]}));
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", req.header('Origin'));
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+});
 
 // setup the chat server to be used with socket.io
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
-const cors = require("cors");
-const corsOptions = {
-    origin: '*',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
-}
-
-app.use(cors(corsOptions)) // Use this after the variable declarat
 console.log('chat server is listening on port 5000');
-
-
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
