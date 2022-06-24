@@ -5,7 +5,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
 require('./config/view-helpers')(app);
-const port = 8000;
+const port = Process.env.PORT || 3000
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 // used for session cookie
@@ -18,7 +18,7 @@ const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-app.use(cors({ credentials: true, origin: 'http://localhost:8000', methods: ["GET", "POST", "PUT", "DELETE"] }));
+// app.use(cors({ credentials: true, origin: 'http://localhost:8000', methods: ["GET", "POST", "PUT", "DELETE"] }));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", req.header('Origin'));
     res.header("Access-Control-Allow-Credentials", true);
