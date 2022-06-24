@@ -1,10 +1,10 @@
-const queue=require('../config/kue');
+// const queue=require('../config/kue');
 
-const commentsMailer=require('../mailers/comments_mailer');
+// const commentsMailer=require('../mailers/comments_mailer');
 
-queue.process('emails',function(job,done){
-    console.log('enails worker is processing a job',job.data);
+// queue.process('emails',function(job,done){
+//     console.log('enails worker is processing a job',job.data);
 
-    commentsMailer.newComment(job.data);
-    done();
-}) //first one is for the name
+//     commentsMailer.newComment(job.data);
+//     done();
+// }) //first one is for the name
