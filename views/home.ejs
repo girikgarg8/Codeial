@@ -3,13 +3,13 @@
 
 <% if(locals.user){ %>
     <section class="home-container">
-        <h1 style="color: aliceblue">Posts</h1>
+        <h1 style="color: rgb(236, 91, 24)">Posts</h1>
         <%-include('_post')-%>
             <section class="friends">
-                <h2 style="color: whitesmoke">Friends</h2>
+                <h2 style="color: rgb(212, 62, 62)">Friends</h2>
                 <% for(friends of all_users){ %>
                     <p>
-                        <a style="text-decoration: none; color: deepskyblue" href="/users/profile/<%= friends.id %>">
+                        <a style="text-decoration: none; color: rgb(222, 41, 41)" href="/users/profile/<%= friends.id %>">
                             <%= friends.name %>
                         </a>
                     </p>
