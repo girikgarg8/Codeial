@@ -37,7 +37,6 @@ app.use(function (req, res, next) {
 // console.log('chat server is listening on port 5000');
 const path = require('path');
 
-if (process.env.CODEIAL_ENVIRONMENT == 'production') {
     app.use(sassMiddleware({
         src: path.join(__dirname, process.env.CODEIAL_ASSET_PATH, 'scss'),
         dest: path.join(__dirname, process.env.CODEIAL_ASSET_PATH, 'css'),
@@ -45,7 +44,6 @@ if (process.env.CODEIAL_ENVIRONMENT == 'production') {
         outputStyle: 'extended',
         prefix: '/css'
     }));
-}
 app.use(express.urlencoded());
 
 app.use(cookieParser());
