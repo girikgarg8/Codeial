@@ -26,7 +26,7 @@ const development = {
     },
     google_client_id: "523939841648-ubkv0cv9ve9f1b7mk4gvveos64cf9als.apps.googleusercontent.com",
     google_client_secret: "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",
-    google_call_back_url: "http://localhost:8000/users/auth/google/callback",
+    google_call_back_url: "https://nameless-ocean-65145.herokuapp.com/users/auth/google/callback",
     jwt_secret: 'codeial',
     morgan: {
         mode: 'dev',
