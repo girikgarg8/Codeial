@@ -4,17 +4,17 @@
         </h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <% if(locals.user){ %>
-                <a class="p-2 text-dark" href="/user/profile/<%= user.id %>"><strong>
+                <a class="p-2 text-dark" href="/users/profile/<%= user.id %>"><strong>
                         <%= user.name %>
                     </strong></a>
-                <a class="p-2 text-dark" href="/user/logout"><button type="submit" class="btn btn-danger">Sign
+                <a class="p-2 text-dark" href="/users/logout"><button type="submit" class="btn btn-danger">Sign
                         Out</button></a>
                 <a class="p-2 text-dark" href="/"><button type="submit" class="btn btn-primary">Home</button></a>
                 <%}else{%>
-                    <a class="p-2 text-dark" href="/user/sign-in"><button type="submit" class="btn btn-success">Sign
+                    <a class="p-2 text-dark" href="/users/sign-in"><button type="submit" class="btn btn-success">Sign
                             In</button></a>
         </nav>
-        <a class="btn btn-primary" href="/user/sign-up">Sign up</a>
+        <a class="btn btn-primary" href="/users/sign-up">Sign up</a>
     </div>
     <% } %>
 </header>
