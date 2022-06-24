@@ -36,6 +36,7 @@ app.use(function (req, res, next) {
 // chatServer.listen(5000);
 // console.log('chat server is listening on port 5000');
 const path = require('path');
+const { default: mongoose } = require("mongoose");
 if (process.env.CODEIAL_ENVIRONMENT == 'production') {
     app.use(sassMiddleware({
         src: path.join(__dirname, process.env.CODEIAL_ASSET_PATH, 'scss'),
@@ -77,7 +78,7 @@ app.use(session({
     },
     store: new MongoStore(
         {
-            mongooseConnection: db,
+            mongooseConnection: mongoose.connection,
             autoRemove: 'disabled'
 
         },
