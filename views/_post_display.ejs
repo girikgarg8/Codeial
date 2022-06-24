@@ -8,7 +8,7 @@
                 <%= post.content %>
                     <br>
                     <small>
-                        <%= post.user.name %>
+                       Posted by:  <%= post.user.name %>
                     </small>
 
                     <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
@@ -38,6 +38,7 @@
                 <div class="post-comments-list">
                     <ul id="post-comments-<%= post._id %>">
                         <% for (comment of post.comments){%>
+                            <p> Comments on this post </p>
                             <%- include('_comment') -%>
                                 <%} %>
                     </ul>
