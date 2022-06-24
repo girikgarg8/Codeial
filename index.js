@@ -1,5 +1,5 @@
 const cors = require("cors");
-const env = require('./config/environment');
+// const env = require('./config/environment');
 const logger = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
