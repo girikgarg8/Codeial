@@ -7,7 +7,7 @@
         <%-include('_post')-%>
             <section class="friends">
                 <h2 style="color: whitesmoke">Friends</h2>
-                <% for(friends of all_user ){ %>
+                <% for(friends of all_users){ %>
                     <p>
                         <a style="text-decoration: none; color: deepskyblue" href="/users/profile/<%= friends.id %>">
                             <%= friends.name %>
