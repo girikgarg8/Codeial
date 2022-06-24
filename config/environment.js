@@ -24,9 +24,9 @@ const development = {
             pass: 'vkoykcvakuusschj'
         }
     },
-    google_client_id: "523939841648-ubkv0cv9ve9f1b7mk4gvveos64cf9als.apps.googleusercontent.com",
-    google_client_secret: "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",
-    google_call_back_url: "https://nameless-ocean-65145.herokuapp.com/users/auth/google/callback",
+    google_client_id: "523939841648-ubkv0cv9ve9f1b7mk4gvveos64cf9als.apps.googleusercontent.co523939841648-al3drgusthmv6c9pb6psrlvu25k3bkmo.apps.googleusercontent.com",
+    google_client_secret: "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",
+    google_call_back_url: "https://codeial2.herokuapp.com/users/auth/google/callback",
     jwt_secret: 'codeial',
     morgan: {
         mode: 'dev',
