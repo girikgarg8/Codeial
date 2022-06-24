@@ -6,7 +6,7 @@ module.exports.create = (req, res) => {
         let post = Post.findById(req.body.post);
 
         if (post) {
-            let comment = await Comment.create({
+            let comment = Comment.create({
                 // creating comment if post found
                 content: req.body.content,
                 post: req.body.post,
