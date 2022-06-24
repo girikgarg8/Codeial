@@ -5,6 +5,16 @@
     <section class="home-container">
         <h1 style="color: rgb(236, 91, 24)">Posts</h1>
         <%-include('_post')-%>
+        <section class="display-posts">
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts){ %>
+                    <%- include('_post_display') -%>
+                        <%} %>
+            </ul>
+        </div>
+        </section>
+            </section>
             <section class="friends">
                 <h2 style="color: rgb(212, 62, 62)">Friends</h2>
                 <% for(friends of all_users){ %>
