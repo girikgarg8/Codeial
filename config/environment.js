@@ -13,7 +13,7 @@ const development = {
     name: 'development',
     asset_path: '/assets',
     session_cookie_key: 'blahsomething',
-    db: 'codeial_development',
+    // db: 'codeial_development',
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',
@@ -37,7 +37,7 @@ const production = {
     name: 'production',
     asset_path: process.env.CODEIAL_ASSET_PATH,
     session_cookie_key: process.env.CODEIAL_SESSION_COOKIE_KEY,
-    db: process.env.CODEIAL_DB,
+    // db: process.env.CODEIAL_DB,
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',
