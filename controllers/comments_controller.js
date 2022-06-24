@@ -12,7 +12,7 @@ module.exports.create = (req, res) => {
                 post: req.body.post,
                 user: req.user._id,
             });
-            post.comment.push(comment); // mongoose function to update comment
+            post.comments.push(comment); // mongoose function to update comment
             post.save(); // telling db its final, save it
 
             //will take care of nodemailer later
