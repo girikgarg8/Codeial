@@ -2,6 +2,10 @@
   "name": "codeial",
   "version": "1.0.0",
   "description": "My all social media web application",
+  "engines": {
+    "node": "14.17.3",
+    "npm": "6.14.13"
+  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -11,7 +15,7 @@
   "keywords": [
     "social"
   ],
-  "author": "CodingNinjas",
+  "author": "Girik Garg",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
